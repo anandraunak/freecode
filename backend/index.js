@@ -21,7 +21,7 @@ app.use("/user", userRouter);
 
 // const MONGODB_ID= process.env.MONGODB_ID;
 // const MONGODB_PASSWORD =process.env.MONGODB_PASSWORD;
-const CONNECTION_URL = `mongodb+srv://raunak:darkknight54@@cluster0.jkv8ae8.mongodb.net/?retryWrites=true&w=majority`;
+const CONNECTION_URL = `mongodb+srv://Anand:darkknight54@@cluster0.jkv8ae8.mongodb.net/?retryWrites=true&w=majority`;
 
 mongoose.connect(CONNECTION_URL,{useNewUrlParser: true,useUnifiedTopology: true}).then(()=> app.listen(5000,()=>{
     console.log('Server started running at port 5000');

@@ -6,6 +6,14 @@ import {AiOutlineAmazon,AiFillApple} from "react-icons/ai";
 import {useNavigate} from "react-router"
 
 function Home() {
+  function check() {
+    if (localStorage.getItem("profile")) {
+      const t = JSON.parse(localStorage.getItem("profile")).token;
+        if(t!==null){return true;}
+        
+    }
+    return false;
+  }
   const navigate=useNavigate();
   return (
     <div>
@@ -23,7 +31,7 @@ function Home() {
             <AiOutlineAmazon className='icon' />
             
           </div>
-          <button className='button' onClick={()=>{navigate("/login")}}>Get started its free</button>
+          <button className='button' onClick={()=>{ console.log(check()); check() ? navigate("/home"):navigate("/login")}}>Get started its free</button>
 
             
 

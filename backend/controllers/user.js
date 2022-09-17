@@ -4,7 +4,7 @@ import "dotenv/config.js";
 
 import UserModal from "../modals/user.js";
 
-const secret = process.env.SECRET;
+const secret = "abcdef";
 
 export const login = async (req, res) => {
   var obj=JSON.parse(res.body);
@@ -32,14 +32,15 @@ export const signup = async (req, res) => {
   const { email, password} = req.body;
 console.log("random")
   try {
-    // const oldUser = await UserModal.findOne({ email });
+    const oldUser = await UserModal.findOne({ email });
 
-    // if (oldUser) return res.status(400).json({ message: "User already exists" });
+    if (oldUser) return res.status(400).json({ message: "User already exists" });
     console.log(password)
 
-    const hashedPassword = await bcrypt.hash("shbjaks", 12);
+    const hashedPassword = await bcrypt.hash(password, 12);
 
-    const result = await UserModal.create({ email:"sjcnlka@gmail.com", password: hashedPassword });
+    const result = await UserModal.create({ email, password: hashedPassword });
+
 
     const token = jwt.sign( { email: result.email, id: result._id }, secret, { expiresIn: "1h" } );
 
