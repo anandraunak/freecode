@@ -1,0 +1,37 @@
+.course-body{
+    align-items: center;
+    margin-top: 50px;
+    margin-right: 500px;
+    margin-left: 500px;
+    
+    
+}
+.title{
+    text-align: center;
+    font-size: xx-large;
+    font-family: fantasy;
+}
+.quote{
+    text-align: center;
+    
+    font-size: medium;
+    font-family: fantasy;
+}
+.name{
+    font-family: cursive;
+    text-align: center;
+}
+.Button{
+    align-items: center;
+    margin-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 500px;
+    background-color: rgb(255, 225, 116);
+}
+
+.Button:hover{
+    background-color: yellowgreen;
+}
